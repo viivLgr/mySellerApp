@@ -6,7 +6,9 @@
       <li class="item"><router-link to="/rating">评价</router-link></li>
       <li class="item"><router-link to="/sell">商家</router-link></li>
     </ul>
-    <router-view></router-view>
+    <keep-alive>
+      <router-view></router-view>
+    </keep-alive>
   </div>
 </template>
 

@@ -43,7 +43,6 @@ import ShopCart from 'components/ShopCart'
 		},
 		data(){
 			return {
-				goods: [],
 				listHeight: [],
 				scrollY: 0
 			}
@@ -101,7 +100,7 @@ import ShopCart from 'components/ShopCart'
 				}
 				let foodList = this.$refs.foodsItem;
 				let el = foodList[index];
-				this.foodsScroll.scrollToElement(el,500);
+				this.foodsScroll.scrollToElement(el,300);
 			}
 		},
 		components: {
