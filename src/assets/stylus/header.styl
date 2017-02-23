@@ -1,0 +1,250 @@
+@import "mixin.styl"
+.header{
+	width:100%;
+	position:relative;
+	height: 132px;
+    overflow: hidden;
+    background:rgba(7,17,27,0.5);
+	.bg{
+		width: 100%; 
+		height: 135px;
+		-webkit-filter: blur(20px);
+	}
+	.header-wrap{
+		position:absolute;
+		top:0;
+		left: 0;
+		width:100%;
+	}
+	.content-wrapper{
+		display:flex;
+		margin-bottom:17px;
+		.avatar{
+			flex:1;
+			text-align: right;
+			padding-top: 20px;
+		}
+		.content{
+			flex:2; 
+			font-size: 14px; 
+			text-align: left;
+			padding-left: 20px;
+			padding-top: 20px;
+			color: #fff;
+			.title{
+				font-size: 14px;
+				font-weight: bold;
+				.tit-bg{
+					display:inline-block;
+					width: 30px;
+					height: 18px;
+					bg-image("../assets/img/brand");
+					background-size:30px 18px; 
+				}
+				.name{
+					display:inline-block;
+					vertical-align:top;
+					line-height: 18px;
+				}
+			}
+			.deliveryTime{
+				padding: 5px 0;
+				span{
+					margin: 0 5px;
+				}
+			}
+			.supports{
+				padding: 5px 0;
+				font-size:12px;
+				position: relative;
+				text-indent: 10px;
+				.type{
+					display:inline-block;
+					position: absolute;
+					left:0;
+					top:3px;
+					width: 16px;
+					height: 16px;
+					margin-right:5px;
+					background-repeat: no-repeat;
+					background-size: 16px;
+					&.decrease{
+						bg-image("../assets/img/decrease_1");
+					}
+					&.discount{
+						bg-image("../assets/img/discount_1");
+					}
+					&.special{
+						bg-image("../assets/img/special_1");
+					}
+					&.invoice{
+						bg-image("../assets/img/invoice_1");
+					}
+					&.guarantee{
+						bg-image("../assets/img/guarantee_1");
+					}
+				}
+				.support{
+					display: inline-block;
+					width: 68%;
+					overflow: hidden;
+					white-space: nowrap;
+					text-overflow: ellipsis;
+				}
+				.length{
+					position:absolute;
+					text-indent: 0px;
+					top:-3px;
+					display: inline-block;
+					border-radius: 20px;
+					color: #fff;
+					padding: 8px 10px;
+					background: rgba(0,0,0,0.3);
+					.icon-keyboard_arrow_right{
+						font-size: 12px;
+						vertical-align: middle;
+					}
+				}
+			}
+		}
+	}
+	.tips{
+		height: 28px;
+		line-height: 28px;
+		font-size:12px;
+		color: #fff;
+		background: rgba(0,0,0,0.3);
+		position: relative;
+		text-indent: 20px;
+		.bulletin{
+			display:inline-block;
+			position: absolute;
+			left: 10px;
+			top:6px;
+			width: 26px;
+			height: 16px;
+			bg-image("../assets/img/bulletin");
+			background-repeat: no-repeat;
+			background-size: 26px 16px;
+		}
+		.text{
+			display:inline-block;
+			width:88%;
+			overflow: hidden;
+			text-overflow: ellipsis;
+			white-space:nowrap;
+			vertical-align: middle;
+		}
+		.icon-keyboard_arrow_right{
+			font-size: 12px;
+			vertical-align: middle;
+		}
+	}
+	.fade-enter-active, .fade-leave-active {
+	  transition: opacity .5s
+	}
+	.fade-enter, .fade-leave-active {
+	  opacity: 0
+	}
+	.detail{
+		position:fixed;
+		top:0;
+		left: 0;
+		z-index: 100;
+		width: 100%;
+		height: 100%;
+		overflow: auto;
+		color: #fff;
+		background: rgba(7,17,27,0.8);
+		.mask{
+			position: absolute;
+			top:0;
+			left:0;
+			width: 100%;
+			height: 100%;
+			z-index:-1;
+			-webkit-filter: blur(10px);
+		}
+		.detail-wrapper{
+			width: 100%;
+			min-height: 100%;
+			.detail-main{
+				margin-top: 64px;
+				padding-bottom: 64px;
+				.name{
+					font-size: 16px;
+					line-height: 16px;
+					text-align: center;
+					font-weight: 700;
+				}
+				.star-wrap{
+					padding: 15px 0 0;
+				}
+				.title{
+					width: 80%;
+					display: flex;
+					margin: 30px auto 24px;
+					.line{
+						flex: 1;
+						position: relative;
+						top: -6px;
+						border-bottom: 1px solid rgba(255,255,255,0.2);
+					}
+					.text{
+						padding: 0 12px;
+						font-size: 14px;
+						font-weight: bold;
+					}
+				}
+				.supports{
+					display:inline-block;
+					text-align: left;
+					font-size: 12px;
+					margin: 0 auto;
+					li{
+						line-height: 30px;
+					}
+					.icon{
+						display:inline-block;
+						vertical-align: middle;
+						width: 16px;
+						height: 16px;
+						margin-right:5px;
+						background-repeat: no-repeat;
+						background-size: 16px;
+						&.decrease{
+							bg-image("../assets/img/decrease_1");
+						}
+						&.discount{
+							bg-image("../assets/img/discount_1");
+						}
+						&.special{
+							bg-image("../assets/img/special_1");
+						}
+						&.invoice{
+							bg-image("../assets/img/invoice_1");
+						}
+						&.guarantee{
+							bg-image("../assets/img/guarantee_1");
+						}
+					}
+				}
+				.bulletin{
+					width: 70%;
+					margin: 0 auto;
+					line-height: 24px;
+					font-size: 12px;
+					text-align: justify;
+				}
+			}
+		}
+		.detail-close{
+			position: relative;
+			width: 32px;
+			height: 32px;
+			margin: -64px auto;
+			clear:both;
+			font-size: 32px;
+		}
+	}
+}
