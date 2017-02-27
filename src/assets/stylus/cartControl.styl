@@ -1,0 +1,38 @@
+@import "../assets/stylus/mixin.styl"
+.cartControl{
+	position: absolute;
+	right: 10px;
+	bottom: 5px;
+	color: rgb(0,160,220);
+	height: 28px;
+	display: flex;
+	.num{
+		display: inline-block;
+		text-align: center;
+		padding: 12px 2px;
+		font-size: 12px;
+		&.num-enter-active, &.remove-leave-active{
+			transition: all 1s 0.5s;
+		}
+		&.remove-enter, &.remove-leave-active {
+		  	opacity: 0;
+		}
+	}
+	.remove,.add{
+		display: inline-block;
+		padding: 6px;
+		font-size: 24px;
+	}
+	.remove{
+		&.remove-enter-active {
+		  transition: all .5s linear;
+		}
+		&.remove-leave-active{
+		  transition: all .3s linear;
+		}
+		&.remove-enter, &.remove-leave-active {
+		  opacity: 0;
+		  transform: translate3D(30px,0,0) rotate(360deg) scale(0);
+		}
+	}
+}

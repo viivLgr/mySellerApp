@@ -12,17 +12,17 @@
 						<span class="name">{{seller.name}}</span>
 					</div>
 					<p class="deliveryTime">{{seller.description}}<span>/</span>{{seller.deliveryTime}}分钟送达</p>
-					<p class="supports">
+					<p class="supports" v-if="seller.supports">
 						<span class="type" :class="classMap[seller.supports[0].type]"></span>
 						<span class="support">{{seller.supports[0].description}}</span> 
-						<span class="length" @click="showDetail">{{seller.supports.length}}个 <i class="icon-keyboard_arrow_right"></i></span>
+						<span class="length" @click="showDetail">{{seller.supports.length}}个 <span class="icon-keyboard_arrow_right"></span></span>
 					</p>
 				</div>
 			</div>
 			<div class="tips" @click="showDetail">
 				<span class="bulletin"></span>
 				<span class="text">{{seller.bulletin}}</span>
-				<span><i class="icon-keyboard_arrow_right"></i></span>
+				<span><span class="icon-keyboard_arrow_right"></span></span>
 			</div>
 		</div>
 		<transition name="fade">
@@ -53,7 +53,7 @@
 						<div class="bulletin">{{seller.bulletin}}</div>
 					</div>
 				</div>
-				<div class="detail-close"><i class="icon-close" @click="hideDetail"></i></div>
+				<div class="detail-close"><span class="icon-close" @click="hideDetail"></span></div>
 			</div>
 		</transition>
 	</div>

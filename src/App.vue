@@ -6,9 +6,7 @@
       <li class="item"><router-link to="/rating">评价</router-link></li>
       <li class="item"><router-link to="/sell">商家</router-link></li>
     </ul>
-    <keep-alive>
-      <router-view></router-view>
-    </keep-alive>
+    <router-view :seller="seller"></router-view>
   </div>
 </template>
 
@@ -38,7 +36,7 @@ export default {
 <style lang="stylus">
 @import './assets/stylus/mixin.styl';
 #app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  font-family: Arial, "Microsoft YaHei", 'Avenir', Helvetica,  sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: #2c3e50;

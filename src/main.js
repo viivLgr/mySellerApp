@@ -15,7 +15,6 @@ Vue.use(Router)
 Vue.use(Resource)
 
 const routers = [
-  {path: '/',component: goods},
   {path: '/goods',component: goods},
   {path: '/rating',component: rating},
   {path: '/sell',component: sell},
@@ -26,6 +25,7 @@ const router = new Router({
   routes: routers
 })
 
+router.push('/goods');
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
