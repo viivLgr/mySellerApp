@@ -11,7 +11,7 @@
 			<div class="wrapper">
 				<dl v-for="item in goods" ref="foodsItem" class="foods-item">
 					<dt class="item-title">{{item.name}}</dt>
-					<dd class="item-content" v-for="food in item.foods">
+					<dd @click="selectFood(food,$event)" class="item-content" v-for="food in item.foods">
 						<div class="img">
 							<img :src="food.icon" :alt="food.name" width="57" height="57">
 						</div>
@@ -31,12 +31,14 @@
 			</div>
 		</div>
 		<ShopCart @add="addFood" ref="shopcart" :select-foods="selectFoods" :delivery-price="seller.deliveryPrice" :min-price="seller.minPrice"></ShopCart>
+		<Food :food="selectedFood" ref="food"></Food>
 	</div>
 </template>
 <script>
 import BScroll from 'better-scroll'
 import ShopCart from 'components/ShopCart'
 import CartControl from 'components/CartControl'
+import Food from 'components/Food'
 
 import Vue from 'vue'
 var eventHub = new Vue()
@@ -53,7 +55,8 @@ var eventHub = new Vue()
 			return {
 				goods: [],
 				listHeight: [],
-				scrollY: 0
+				scrollY: 0,
+				selectedFood: {}
 			}
 		},
 		computed: {
@@ -132,11 +135,19 @@ var eventHub = new Vue()
 				let foodList = this.$refs.foodsItem;
 				let el = foodList[index];
 				this.foodsScroll.scrollToElement(el,300);
+			},
+			selectFood(food,event) {
+				if(!event._constructed){ //自己派发事件为true；浏览器原生派发为false
+					return; //pc状态下return掉
+				}
+				this.selectedFood = food;
+				this.$refs.food.show();
 			}
 		},
 		components: {
 			ShopCart,
-			CartControl
+			CartControl,
+			Food
 		}
 	}
 </script>
